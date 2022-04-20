@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dummy Text</title>
+        
+    </head>
+    <style>
+        #text {
+   
+            border-color: white;
+            border-width: 0cm;
+            background-color: white;
+            border-style: double;
+            float: left;
+            border: 1px solid #ccc;
+            height: 250px;
+        }
+    </style>
+    <body>
+        <div id = "text" type="text">
+            Our brows bound war hath smooth'd his wrinkled front;
+                And all the souls of a lute.
+                But I, that love's majesty
+                To strut before a wanton amorous pleasing nymph;
+                I, that am rudely stamp'd, and with victorious wrinkled front;
+                And now, instead of this wrinkled front;
+                And now, instead of the deep bosom of a lute.
+                But I, that lour'd upon our house
+                In the ocean buried.
+        </div>
+        <div >
+            <h2>Border</h2>
+        <label>Red value:</label>
+        <input class ="border" id="b-red" type="text"> 
+        <br>
+        <label>Green value:</label>
+        <input class ="border" id="b-green" type="text">
+        <br>
+        <label>Blue value:</label>
+        <input class ="border" id="b-blue" type="text"><br>
+        <label>Width:</label>
+        <input class ="border" id="width" type="text">
+        </div>
+        
+        <br>
+        <div>
+            <h2>Background color</h2>
+            <label>Red value:</label>
+            <input class = "bg-color" id="bg-red" type="text"><br>
+            <label>Green value:</label>
+            <input class = "bg-color" id="bg-green" type="text"><br>
+            <label>Blue value:</label>
+            <input class = "bg-color" id="bg-blue" type="text"><br>
+        </div>
+        
+        
+        <button onclick="myClick()">Submit</button>
+        <br>
+        <div id="output"></div>
+        <script>
+            var border;
+            textbox = document.getElementById("text");
+                console.log(textbox);
+                function myClick() {
+                    border = document.getElementsByClassName("border");
+                    var b_rgb = "rgb(" + border[0].value + "," + border[1].value + "," + border[2].value + ")";
+                    textbox.style.borderColor = b_rgb;
+                    console.log(textbox.style.borderColor);
+                    width = document.getElementById("width").value;
+                    textbox.style.borderWidth = width;
+        
+                    bg = document.getElementsByClassName("bg-color");
+                    var bg_rgb = "rgb(" + bg[0].value + "," + bg[1].value + "," + bg[2].value + ")"
+                    textbox.style.backgroundColor = bg_rgb;
+                    document.getElementById("output").innerHTML = "Border Color: " + b_rgb + "; Border Width: " + width + "; Background Color: " + bg_rgb;
+
+                }
+            
+        </script>
+    </body>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 1</title>
+    </head>
+
+    <style>
+        form {
+            background-color: #ffffff;
+            color: black;
+            line-height: 24px;
+            margin: 90px 500px;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        form input[type="validate"] {
+            align-items: flex-start;
+            background-color: #0d4a33;
+            border-color: #0d4a33;
+            border-radius: 20px;
+            border-style: solid;
+            border-width: 1px;
+            color: #ffffff;
+            font-family: -apple-system;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 8px 16px;
+            text-align: center;
+        }
+        
+    </style>
+    <body>
+        <div class="form" id="form">
+            <form>
+                <label style="font-size: 20px" for="password">Password: </label>
+                <br>
+                <div class="userInput">
+                    <input type="password" id="password" placeholder="Password"
+                        title="Must contain at least 8 characters" required>
+                    <br>
+                    <input type="valid" id="valid" placeholder="Type your
+                        password again" title="Must contain at least 8
+                        characters" required>
+                </div>
+                <br>
+                <span></span>
+                <input type="validate" value="Validate" onclick="Validate()">
+                <!-- <button type="button" onclick="Validate()">Validate</button> -->
+            </form>
+        </div>
+        <script>
+            var password = document.getElementById("password");
+            var val = document.getElementById("valid");
+            
+            function Validate() {
+                
+                if (password.value.length < 8) {
+                    alert("Password must contain at least 8 characters.")
+                }
+                
+                if (password.value != val.value) {
+                    alert("Passwords do not match.");
+                }
+                else {alert("Success!")}
+        
+              }
+        </script>
+    </body>
+
+</html>
